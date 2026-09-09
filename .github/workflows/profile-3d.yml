@@ -1,11 +1,11 @@
 name: GitHub profile 3D contribution
 
+# Manual only. The 3D calendar is not shown on the profile README any more —
+# a daily-commit picture is the wrong signal for research output, and the
+# action's bar height is a hardcoded log scale with no axis controls.
+# Kept so it can be revived with one click from the Actions tab if wanted.
 on:
-  schedule:
-    - cron: "0 18 * * *"      # daily, 18:00 UTC
-  workflow_dispatch:           # lets you run it by hand from the Actions tab
-  push:
-    branches: [main]
+  workflow_dispatch:
 
 jobs:
   build:
