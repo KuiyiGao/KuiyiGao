@@ -11,15 +11,6 @@ Undergraduate at UNC-Chapel Hill · B.A. Computer Science, 2027 · applying for 
 
 ---
 
-### Recently
-
-| | |
-|---|---|
-| **Sep 2026** | Applying to PhD programs for Fall 2027 |
-| **Aug 2026** | Submitted our GUI-agent robustness benchmark (co-first author) |
-| **Jul 2026** | Finished the Agent Skill Firewall at MBZUAI UGRIP; writing up the measurement study behind it |
-| **Jul 2025** | Two papers at **ACL 2025** — one main conference, one Findings |
-
 ### Papers
 
 **Can't See the Forest for the Trees: Benchmarking Multimodal Safety Awareness for Multimodal LLMs** · `ACL 2025 Main` <br/>
