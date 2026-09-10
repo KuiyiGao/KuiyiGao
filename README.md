@@ -4,6 +4,10 @@ I work on **AI agent safety**: I build the benchmarks that show how agents fail 
 
 The question I keep coming back to — **when an agent does something it shouldn't, does anything actually see it?** On stored runs of 65 malicious agent skills, our runtime detector flagged *none* of them. Not because it judged wrongly: 46 of the 65 never produced traffic a monitor could observe. Reported recall was measuring the wrong thing. That study is what I'm writing up now.
 
+<img src="assets/fig-recall-factorization.png" width="100%" alt="Reported recall factorizes into P(execute), P(observe given execute) and P(detect given observed); of 65 malicious skills, 46 produced no observable egress and 0 were flagged"/>
+
+<sub>Of 65 malicious agent skills, 46 never produced traffic a monitor could see — so reported recall factors as P(execute)·P(observe&nbsp;|&nbsp;execute)·P(detect&nbsp;|&nbsp;observed).</sub>
+
 Undergraduate at UNC-Chapel Hill · B.A. Computer Science, 2027 · applying for Fall 2027 PhD programs
 [Homepage](https://kuiyigao.github.io) · [Google Scholar](https://scholar.google.com/citations?user=Yobg_TQAAAAJ) · [CV](https://kuiyigao.github.io/Kuiyi_Gao_CV.pdf) · kuiyigao@unc.edu
 
@@ -14,7 +18,7 @@ Undergraduate at UNC-Chapel Hill · B.A. Computer Science, 2027 · applying for 
 | | |
 |---|---|
 | **Sep 2026** | Started at UNC-Chapel Hill as a junior transfer |
-| **Aug 2026** | Submitted our GUI-agent robustness benchmark — 42 interface-noise types, 7 agent frameworks (co-first author) |
+| **Aug 2026** | Submitted our GUI-agent robustness benchmark (co-first author) |
 | **Jul 2026** | Finished the Agent Skill Firewall at MBZUAI UGRIP; writing up the measurement study behind it |
 | **Jul 2025** | Two papers at **ACL 2025** — one main conference, one Findings |
 
@@ -28,25 +32,8 @@ Multimodal models miss unsafe intent when it is split across image and text — 
 [anthology](https://aclanthology.org/2025.findings-acl.571/) · [arXiv](https://arxiv.org/abs/2410.03869) <br/>
 Never ask for the unsafe image at once. Every edit step is individually benign, so no single step is the one a filter can refuse. I designed the attack, ran the experiments, and wrote the paper.
 
-**A Dynamic Cross-Platform Benchmark for GUI-Agent Robustness under Real-World Interface Noise** · `under review, 2026` · co-first author <br/>
+**GUI-agent robustness under interface noise** · `under review, 2026` · co-first author <br/>
 Noise does not simply lower an agent's success rate — it redirects the trajectory and raises the rate of unsafe actions. Success rate alone hides that.
-
-<!-- ── FIGURE STRIP ────────────────────────────────────────────────────────────
-     Put 2–3 figures in assets/ (conventions: assets/README.md), then delete this
-     opening marker and the closing one below.
-
-<table>
-  <tr>
-    <td width="33%"><img src="assets/fig-recall-factorization.png" width="100%" alt=""/><br/>
-        <sub><b>Recall factorizes.</b> P(execute)·P(observe|execute)·P(detect|observed) — the middle term is the one that bit us</sub></td>
-    <td width="33%"><img src="assets/fig-skill-firewall.png" width="100%" alt=""/><br/>
-        <sub><b>Agent Skill Firewall.</b> Intent → action → result, checked through a canary-seeded proxy</sub></td>
-    <td width="33%"><img src="assets/fig-noise-trajectories.png" width="100%" alt=""/><br/>
-        <sub><b>Interface noise redirects trajectories.</b> Same task, same agent, one overlay</sub></td>
-  </tr>
-</table>
-
-──────────────────────────────────────────────────────────────────────────── -->
 
 ### Things I built
 
@@ -54,8 +41,17 @@ Each repository carries its own `docs/`: the question it answers, the claim, the
 
 | | |
 |---|---|
-| **[OpenClaw-Skill-Hack](https://github.com/KuiyiGao/OpenClaw-Skill-Hack)** | **Agent Skill Firewall** — scans a skill statically, then verifies intent against action against result through a canary-seeded proxy. Every PASS / DEFER / BLOCK keeps the evidence it was made from, so a block can be re-derived instead of taken on faith. |
-| **[Distorted-OCR-Compression](https://github.com/KuiyiGao/Distorted-OCR-Compression)** | **MemSlot** — 32 learnable memory slots learn which spans of a contract matter *before* anyone asks a question; the salient spans are compressed through an OCR model. CUAD, ten control arms. |
+<table>
+<tr>
+<td width="42%"><img src="assets/fig-skill-firewall.png" width="100%" alt="Agent Skill Firewall pipeline: skill bundle, static pre-scan, canary-seeded proxy, intent vs action vs result, PASS DEFER BLOCK"/></td>
+<td width="58%"><b><a href="https://github.com/KuiyiGao/OpenClaw-Skill-Hack">OpenClaw-Skill-Hack</a> — Agent Skill Firewall</b><br/>
+Scans a skill statically, then verifies intent against action against result through a canary-seeded proxy. Every PASS / DEFER / BLOCK keeps the evidence it was made from, so a block can be re-derived instead of taken on faith.</td>
+</tr>
+</table>
+
+| | |
+|---|---|
+| **[Distorted-OCR-Compression](https://github.com/KuiyiGao/Distorted-OCR-Compression)** | **MemSlot** — 32 learnable memory slots learn which spans of a contract matter *before* anyone asks a question; those spans are then compressed through an OCR model. |
 | **[QuickMotionDetection](https://github.com/KuiyiGao/QuickMotionDetection)** | **Movability segmentation** — COCO-Stuff relabelled into four levels of "can this move?", as a perception prior for embodied safety. mIoU 0.638 @ 58 FPS. |
 
 ### How I try to work
