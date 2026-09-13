@@ -2,11 +2,7 @@
 
 I work on **trustworthy AI** — how systems behave once they leave the lab and meet real interfaces, real tools and real people. Mostly: safety benchmarks, jailbreak attacks and defenses, agent robustness under interface noise, and runtime evidence for what an agent actually did.
 
-<img src="assets/fig-recall-factorization.png" width="100%" alt="Reported recall factorizes into P(execute), P(observe given execute) and P(detect given observed); of 65 malicious skills, 46 produced no observable egress and 0 were flagged"/>
-
-<sub>On stored runs of 65 malicious agent skills, 46 produced no proxy-visible traffic, so the detector was never reached.</sub>
-
-Undergraduate at UNC-Chapel Hill · B.A. Computer Science, 2027 · applying for Fall 2027 PhD programs
+Undergraduate at UNC-Chapel Hill · B.A. Computer Science, 2027 · actively seeking for Fall 2027 PhD opportunity
 [Homepage](https://kuiyigao.github.io) · [Google Scholar](https://scholar.google.com/citations?user=Yobg_TQAAAAJ) · [CV](https://kuiyigao.github.io/Kuiyi_Gao_CV.pdf) · kuiyigao@unc.edu
 
 ---
