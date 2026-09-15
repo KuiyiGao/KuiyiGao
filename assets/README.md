@@ -19,3 +19,19 @@ Suggested first three (the claims worth showing to someone who has 20 seconds):
 3. `fig-noise-trajectories.png` — one before/after trajectory pair showing that noise changes *which* actions an agent takes.
 
 Then uncomment the figure strip in `../README.md`.
+
+## What is here now (2026-09-12)
+
+One figure per project, all 1600×1000 so they tile evenly as thumbnails on the homepage. Every number inside a figure comes from a source that can be checked; nothing else is allowed in.
+
+| File | Claim it carries | Where the numbers come from |
+|---|---|---|
+| `fig-mmsafeaware-two-failures.png` | safety awareness fails two ways: missing split intent, over-refusing benign input | arXiv 2502.11184 abstract — 1,500 pairs, 29 scenarios, nine MLLMs, GPT-4V 36.1% / 59.9%, three mitigations |
+| `fig-chain-of-jailbreak.png` | one harmful request becomes a chain of harmless edits | arXiv 2410.03869 abstract — 9 × 3 × 3 CoJ-Bench, four services, >60% vs 14%, Think Twice >95% |
+| `fig-gui-agent-interface-noise.png` | noise changes what the agent does, not only whether it succeeds | no numbers on purpose (paper under review); the three axes are from the abstract |
+| `fig-skill-firewall.png` | pipeline + PASS/DEFER/BLOCK, then the reach-the-check measurement | repo; 0/65 and 46/65 from the measurement study (manuscript in preparation) |
+| `fig-memslot-pipeline.png` | decide what matters before the question is asked | repo README — frozen RoBERTa, 32 slots, 64–400 vision tokens, CUAD metrics, ten arms; the page crop is the project's own `distorted_rendering.png` (rendering primitive) |
+| `fig-movability-segmentation.jpg` | which pixels can move — a perception prior | course report — mIoU 0.6381, 58.21 FPS, Table 1 level names; tiles are the report's epoch-50 predictions |
+| `fig-recall-factorization.png` | recall = P(execute)·P(observe\|execute)·P(detect\|observed) | kept for the measurement paper; not currently shown |
+
+Regenerate: `python3 _source/mkfigs.py` writes SVGs to `out/`; render at a 1600×1000 viewport (Playwright/Chromium) and quantize schematic ones to 128 colours. The two raster figures need `src/mov-*.png` (cropped from the report PDF) and `src/ocr-crop.png` (cropped from the repo's rendering).
