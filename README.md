@@ -6,10 +6,10 @@ I'm an undergraduate at UNC-Chapel Hill. I work on multimodal safety and compute
 
 ### Research
 
-- **MMSafeAware** — image–text safety evaluation and benchmark construction; I also worked on the fine-tuning experiments. Third author, ACL 2025. [Paper](https://aclanthology.org/2025.acl-long.832/) · [Code](https://github.com/Jarviswang94/MMSafetyAwareness)
-- **Chain-of-Jailbreak** — multi-turn image-editing safety. I designed the study methodology, built part of the dataset, and ran most of the attack and defense experiments. Second author, Findings of ACL 2025. [Paper](https://aclanthology.org/2025.findings-acl.571/) · [Code](https://github.com/Jarviswang94/Chain-of-Jailbreak)
-- **GUI-agent robustness** — evaluation of task completion, safety, and action changes on web and Android tasks. Co-first-authored manuscript under review.
-- **[Runtime safety for agent skills](https://github.com/KuiyiGao/OpenClaw-Skill-Hack)** — I built the runtime monitoring layer in a four-student project; ongoing work connects approved safety rules to observed behavior.
+- **MMSafeAware** — I worked on image–text safety evaluation, benchmark construction, and fine-tuning experiments. Third author, ACL 2025. [Paper](https://aclanthology.org/2025.acl-long.832/) · [Code](https://github.com/Jarviswang94/MMSafetyAwareness) · [Figures](https://kuiyigao.github.io/research.html#mmsafeaware)
+- **Chain-of-Jailbreak** — multi-turn image-editing safety. I designed the study, built part of the dataset, and ran most of the attack and defense experiments. Second author, Findings of ACL 2025. [Paper](https://aclanthology.org/2025.findings-acl.571/) · [Code](https://github.com/Jarviswang94/Chain-of-Jailbreak) · [Figures](https://kuiyigao.github.io/research.html#coj)
+- **RealGUINoise** — I designed metrics for task completion, unsafe actions, and changes in action sequences on web and Android tasks, and contributed to the evaluation harness. Co-first-authored manuscript under review.
+- **[Runtime safety for agent skills](https://github.com/KuiyiGao/OpenClaw-Skill-Hack)** — I built the runtime monitoring layer in a four-student project; ongoing work checks actions against approved permissions and records observations and decisions in typed Tickets.
 
 ### Code and technical background
 
