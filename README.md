@@ -1,4 +1,4 @@
-### Cory
+### Cory Gao
 
 I build, evaluate and improve AI that people can trust, with a particular interest in where machine intelligence meets human values.
 
